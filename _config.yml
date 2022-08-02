@@ -24,7 +24,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: **Jong**'s study
+title: Jong's study
 email: sonjjong0604@gmail.com
 author: Jong-Won-Kim98
 
