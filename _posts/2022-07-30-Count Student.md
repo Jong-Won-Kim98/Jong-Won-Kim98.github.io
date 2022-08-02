@@ -2,9 +2,11 @@
 layout: post
 title: Counting students
 subtitle: Using spark_element
-categoris: BigData
-tags: [Spark, pyspark]
+categories: BigData
+tags: Spark pyspark
 ---
+
+Pyspark: 
 
 ```python
 from pyspark import SparkConf, SparkContext
