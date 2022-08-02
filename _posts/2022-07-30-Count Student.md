@@ -1,10 +1,9 @@
 ---
-layout: articles
-heading: 'Counting students'
-subheading: 'Using spark_element'
-banner: 'default'
+layout: post
+title: Counting students
+subtitle: Using spark_element
 categoris: BigData
-tag: [Spark, pyspark]
+tags: [Spark, pyspark]
 ---
 
 ```python
