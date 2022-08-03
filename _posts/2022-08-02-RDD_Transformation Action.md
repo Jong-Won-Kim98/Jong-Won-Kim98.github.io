@@ -1,3 +1,27 @@
+---
+layout: post
+title: Transformation, Actions
+subtitle: Operating principle
+categories: BigData
+tags: Transformation Actions
+---
+
+### Transformation
+   #### Narrow Transfromation
+
+     - 1:1 변환
+     - filter(), map(), flatMap(), sample(), union()
+     - map(<func>): <finc> 함수가 적용된 새로운 RDD가 만들어 진다
+     - flatmap(<func>): map의 모든 결과를 1차원 배열 형색으로 평평(flat)하게 나타낸다
+
+   #### Wide Transformations
+     - groupBy(<func>)
+
+   #### Shuffling
+     - 결과 RDD의 파티션에서 다른 파티션의 데이터가 들어갈 수 있다
+     - reducebyKey(), groupByKey(), cartesian, distinct, Intersection, sort
+ - 모든 변한 데이터를 master에 return하여 master에서 확인 할 수 있다
+
 ```python
 from pyspark import SparkConf, SparkContext
 ```
@@ -31,7 +55,7 @@ sc.getConf().getAll()
      ('spark.ui.showConsoleProgress', 'true')]
 
 
-
+### 데이터 관리
 1. RDD 생성
 2. 일반 파이썬 리스트를 이용, RDD 생성
 3. parallelize([item1, item2, item3, ...])
@@ -61,8 +85,8 @@ foods.collect()
 
 
 
-- 각 음식 별 개수 count
-    - countByValue()
+### 각 음식 별 개수 count
+- countByValue()
 
 
 ```python
@@ -76,8 +100,8 @@ foods.countByValue()
 
 
 
-- 각 음식 별 개수 count
-    - countByValue()
+### 각 음식 별 개수 count
+- countByValue()
 
 
 ```python
@@ -91,8 +115,8 @@ foods.take(3)
 
 
 
-- 처음 1개의 데이터 가져오기
-    - first()
+### 처음 1개의 데이터 가져오기
+- first()
 
 
 ```python
@@ -106,8 +130,8 @@ foods.first()
 
 
 
-- RDD 내 전체 데이터의 개수 세기
-    - count()
+### RDD 내 전체 데이터의 개수 세기
+- count()
 
 
 ```python
@@ -121,9 +145,9 @@ foods.count()
 
 
 
-- 중복 데이터 제거
-    - distinct()
-    - :중복 데이터를 제거한 RDD를 새로 생성 하는 transformation
+### 중복 데이터 제거
+- distinct()
+- :중복 데이터를 제거한 RDD를 새로 생성 하는 transformation
 
 
 
@@ -164,12 +188,12 @@ fd.count()
 
 
 
-- 요소들을 하나 씩 꺼내서 함수에 저장
-    - action 이지만 return을 하지 않는다
-    - foreach(<func>)
-    - worker 노드에서 실행된다
-    - Driver Program(SparkContext)에서 실행하는 것이 아니기 때문에 SparkContext에서 확인할 수 없다
-    - RDD에 연산을 하고 난 후 log를 저장할 때 유용하다
+### 요소들을 하나 씩 꺼내서 함수에 저장
+- foreach(<func>)
+- action 이지만 return을 하지 않는다
+- worker 노드에서 실행된다
+- Driver Program(SparkContext)에서 실행하는 것이 아니기 때문에 SparkContext에서 확인할 수 없다
+- RDD에 연산을 하고 난 후 log를 저장할 때 유용하다
 
 
 ```python
@@ -178,10 +202,10 @@ foods.foreach(lambda x : print(x))
 # 결과값을 print했기 때문에 터미널에서만 확인 가능하다(worker 공간)
 ```
 
-- Narrow Transformations
-    - 1:1 변환을 의미한다
-    - 하나의 열을 조작하기 위해 다른 열 및 파티션의 데이터를 사용할 필요가 없다
-    - filter(), map(), flatMap(), sample(), union()
+### Narrow Transformations
+- 1:1 변환을 의미한다
+- 하나의 열을 조작하기 위해 다른 열 및 파티션의 데이터를 사용할 필요가 없다
+- filter(), map(), flatMap(), sample(), union()
 
 
 ```python
@@ -299,10 +323,10 @@ filteredMovie.collect()
 
 
 
-- 집합 Transformation
-    - 교집합(intersection)
-    - 합집합(union)
-    - 차집합(subtract)
+### 집합 Transformation
+- 교집합(intersection)
+- 합집합(union)
+- 차집합(subtract)
 
 
 ```python
@@ -349,17 +373,19 @@ num1.subtract(num2).collect()
 
 
 
-데이터 랜덤 추출
-- sample(withReplacement, graction, seed = None)
-- 샘플링: 데이터에서 일부분 추출
-- withReplacement: 한 번 추출 된 샘플을 다시 샘플링 대상을 삼을 것인가 여부
-    - True: 한 번 샘플링 된 데이터가 다시 대상
-    - False: 한 번 샘플링 된 데이터가 다시 대상이 되지 않는다
-- fraction: 샘플링 된 데이터의 기댓값(확률)
-    - 각각의 데이터가 추출될 확률
-    - 높아지면 높아질 수록 원본에서 샘플링되는 원소의 개수가 많아진다
-- seed: 랜덤을 고정해서 항상 같은 결과가 나올 수 있도록
-'''
+### 데이터 랜덤 추출
+#### sample(withReplacement, graction, seed = None)
+  - 샘플링: 데이터에서 일부분 추출
+#### withReplacement 
+- 한 번 추출 된 샘플을 다시 샘플링 대상을 삼을 것인가 여부
+- True: 한 번 샘플링 된 데이터가 다시 대상
+- False: 한 번 샘플링 된 데이터가 다시 대상이 되지 않는다
+#### fraction
+- 샘플링 된 데이터의 기댓값(확률)
+- 각각의 데이터가 추출될 확률
+- 높아지면 높아질 수록 원본에서 샘플링되는 원소의 개수가 많아진다
+#### seed
+- 랜덤을 고정해서 항상 같은 결과가 나올 수 있도록
 
 
 ```python

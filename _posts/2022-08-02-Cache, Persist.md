@@ -14,6 +14,13 @@ tags: Spark Persist
 - 데이터를 다루는 task는 반복되는 경우가 많다 
 - Cache(), Persist(): 데이터를 메모리에 저장해두고 사용이 가능하다
 
+#### Cache
+- default Storage Lvevel을 사용한다
+- RDD: MEMORY_ONLY
+- DataFrame(DF): MEMORY_AND_DISK
+#### Persist
+- Storage Leel을 사용자가 원하는 대로 지정이 가능하다
+
 #### Actions
 
 연산 결과 출력 및 저장(즉시실행(Eager Execution))

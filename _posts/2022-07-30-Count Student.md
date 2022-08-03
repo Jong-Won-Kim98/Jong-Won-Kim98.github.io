@@ -6,7 +6,7 @@ categories: BigData
 tags: Spark pyspark
 ---
 
-Pyspark: 
+
 
 ```python
 from pyspark import SparkConf, SparkContext

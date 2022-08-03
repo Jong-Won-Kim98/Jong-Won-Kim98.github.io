@@ -26,6 +26,7 @@ flatMapValues()
 ![reduction](https://user-images.githubusercontent.com/77920565/182549925-ce5fc0ca-da06-4ea2-b3f5-286b5577395f.png)
 
 
+
 ```python
 from pyspark import SparkConf, SparkContext
 conf = SparkConf().setMaster("local").setAppName("key-value_rdd_op_join")
