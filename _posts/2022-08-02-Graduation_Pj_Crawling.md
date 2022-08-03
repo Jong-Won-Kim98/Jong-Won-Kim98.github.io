@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Graduation_PT
+title: Graduation_Pj
 subtitle: Crawling
-categories: Graduation_PT(Crawling)
-tags: Crawling Graduation_PT
+categories: Graduation_Pj(Crawling)
+tags: Crawling Graduation_Pj
 ---
 
-### Graduation_Pt
+### Graduation_Pj
  
 4학년 1학기 졸업 팀 프로젝트를 수행하는 중 이를 기록하고 싶어 중간 단계 이지만 기록을 시작하였습니다
 
