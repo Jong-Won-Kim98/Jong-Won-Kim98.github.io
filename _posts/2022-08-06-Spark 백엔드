@@ -1,0 +1,47 @@
+---
+layout: post
+title: Spark BackEnd
+subtitle: Spark Logical
+categories: Spark_BackEnd
+tags: Spark BackEnd
+---
+
+
+### Spark 백엔드
+
+![Spakr 백엔드](https://user-images.githubusercontent.com/77920565/183240023-86a93cd8-d9e7-4dc2-8952-76637b859adc.png)
+
+### Catalyst
+
+사용자의 코드를 실행 가능한 계획으로 바꿔주는 엔진, 연산을 위한 여러 방법 중 최적화 된 단계를 거쳐 하나의 플랭 실행
+
+![catalyst](https://user-images.githubusercontent.com/77920565/183240168-09b14455-004a-4a7a-b93f-fa2b66967981.png)
+
+### Logical Plan -> Physical Plan
+  #### Logical Plan
+    - 수행해야 하는 모든 Transformations 단계에 대한 추상화
+    - 데이터가 어떻게 변화해야 하는지 정의하지만 실제 어디서 어떻게 동작하는지는 정의하지 않는다
+   #### Physical Plan
+    - Logical Plan이 어떻게 클러스터 위에서 실행될지 정의
+    - 실행 전략을 만들고 Cost Model에 따라 최적화
+### 변환 과정
+1. 분석: DataFrame 객체 관계 계산, 컬럼 타입과 이름 확인
+2. Logical Plan 최적화
+   1. 상수로 표현된 표현식 Compile time에 계산
+   2. Predicata Pyshdown: join & filter -> filter & join
+   3. Prejection Purning: 연산에 필요한 컬럼만 추출
+3. Physical Plan 만들기: Spark에서 실행 가능한 Plan으로 변환
+4. Code Generation: 최적화된 Physical Plan -> Java Byte Code로 변환해 CPU에서 돌릴 수 있도록 한다
+
+![catalyst 변환 과정](https://user-images.githubusercontent.com/77920565/183241077-16655b27-09c4-4504-b596-402a2308555a.png)
+
+### Explain 함수
+   #### spark.sql(query).explan(True)
+    - Parsed Logical Plan
+    - Analyzed Logical Plan
+    - Optimized Logical Plan
+    - Physical Plan
+
+### Tungsten
+
+low-level에서 하드웨어의 최대 성능을 발휘할 수 있게 해준다(메모리와 CPU의 효율을 최적화)
