@@ -3,7 +3,7 @@ layout: post
 title: Machine Learning Principle
 subtitle: MLlib
 categories: Machine_Learning
-tags: machine_learnin
+tags: machine_learning
 ---
 
 ### MLlib
