@@ -6,28 +6,28 @@ categories: Graduation_Pj(Second)
 tags: YOLOv5
 ---
 
-Yolov5¶ó´Â °´Ã¼ ÀÎ½Ä ÇÁ·¹ÀÓ ¿öÅ©¸¦ ¿©·¯ ¹æ¸éÀ¸·Î °øºÎÇØº¸°í Ã³À½ »ç¿ëÇØ º¸¸é¼­ Ã³À½ °èÈ¹Çß´ø °úÁ¤°ú ¸¹ÀÌ º¯Çß´Ù. ¿ì¼± Ã¹¹ø Â°·Î Àú¹ø Æ÷½ºÆ®¿¡¼­ »ç¿ëÇÏ·Á Çß´ø ÇÐ½À µ¥ÀÌÅÍÀÇ °æ¿ì Á¤È®µµ Ãø¸é¿¡¼­ ³Ê¹« ¶³¾îÁø´Ù ÆÇ´ÜÇÏ¿© ÀÎ½ÄÇÑ °´Ã¼¿¡ ´ëÇÑ LabelÀ» ±âÁØÀ¸·Î ÆÇ´ÜÇÏ±â·Î °á½ÉÇß´Ù. °úÁ¤Àº ´ÙÀ½°ú °°´Ù.
+Yolov5ë¼ëŠ” ê°ì²´ ì¸ì‹ í”„ë ˆìž„ ì›Œí¬ë¥¼ ì—¬ëŸ¬ ë°©ë©´ìœ¼ë¡œ ê³µë¶€í•´ë³´ê³  ì²˜ìŒ ì‚¬ìš©í•´ ë³´ë©´ì„œ ì²˜ìŒ ê³„íší–ˆë˜ ê³¼ì •ê³¼ ë§Žì´ ë³€í–ˆë‹¤. ìš°ì„  ì²«ë²ˆ ì§¸ë¡œ ì €ë²ˆ í¬ìŠ¤íŠ¸ì—ì„œ ì‚¬ìš©í•˜ë ¤ í–ˆë˜ í•™ìŠµ ë°ì´í„°ì˜ ê²½ìš° ì •í™•ë„ ì¸¡ë©´ì—ì„œ ë„ˆë¬´ ë–¨ì–´ì§„ë‹¤ íŒë‹¨í•˜ì—¬ ì¸ì‹í•œ ê°ì²´ì— ëŒ€í•œ Labelì„ ê¸°ì¤€ìœ¼ë¡œ íŒë‹¨í•˜ê¸°ë¡œ ê²°ì‹¬í–ˆë‹¤. ê³¼ì •ì€ ë‹¤ìŒê³¼ ê°™ë‹¤.
 
-1. Å×½ºÆ® µ¿¿µ»óÀ» °°Àº ÇÁ·¹ÀÓÀ¸·Î ÀÌ¹ÌÁöÈ­
-2. ÀÌ¹ÌÁö¿¡ ´ëÇÑ ÁÖÂ÷±¸¿ª ÁÂÇ¥¸é¿¡ ´ëÇÑ ÁÂÇ¥ °Ë»ö
-3. ÀÌ¹ÌÁö¸¶´Ù °´Ã¼ ÀÎ½Ä ½Ã »ý¼ºµÇ´Â exp ÆÄÀÏÀÇ label °ª »ç¿ë
-4. °´Ã¼°¡ ÇØ´ç ÁÂÇ¥¿¡ ÀÎ½ÄµÉ °æ¿ì ÁÖÂ÷ ºÒ°¡·Î ÆÇ´Ü
+1. í…ŒìŠ¤íŠ¸ ë™ì˜ìƒì„ ê°™ì€ í”„ë ˆìž„ìœ¼ë¡œ ì´ë¯¸ì§€í™”
+2. ì´ë¯¸ì§€ì— ëŒ€í•œ ì£¼ì°¨êµ¬ì—­ ì¢Œí‘œë©´ì— ëŒ€í•œ ì¢Œí‘œ ê²€ìƒ‰
+3. ì´ë¯¸ì§€ë§ˆë‹¤ ê°ì²´ ì¸ì‹ ì‹œ ìƒì„±ë˜ëŠ” exp íŒŒì¼ì˜ label ê°’ ì‚¬ìš©
+4. ê°ì²´ê°€ í•´ë‹¹ ì¢Œí‘œì— ì¸ì‹ë  ê²½ìš° ì£¼ì°¨ ë¶ˆê°€ë¡œ íŒë‹¨
 
-### Å×½ºÆ® µ¿¿µ»óÀ» °°Àº ÇÁ·¹ÀÓÀ¸·Î ÀÌ¹ÌÈ­
+### í…ŒìŠ¤íŠ¸ ë™ì˜ìƒì„ ê°™ì€ í”„ë ˆìž„ìœ¼ë¡œ ì´ë¯¸í™”
 
 ```Python
 import cv2
 
-cap = cv2.VideoCapture('C:/Graduation_Pj/yolov5-master/data/images/pest.mp4')  # µ¿¿µ»ó ºÒ·¯¿À±â
+cap = cv2.VideoCapture('C:/Graduation_Pj/yolov5-master/data/images/pest.mp4')  # ë™ì˜ìƒ ë¶ˆëŸ¬ì˜¤ê¸°
 num = 0
 
 while (cap.isOpened()):
     ret, frame = cap.read()
     if ret:
         cv2.imshow('frame', frame)
-        # ÀÌ¹ÌÁöÀÇ °¢ ÀÌ¸§À» ÀÚµ¿À¸·Î ÁöÁ¤
+        # ì´ë¯¸ì§€ì˜ ê° ì´ë¦„ì„ ìžë™ìœ¼ë¡œ ì§€ì •
         path = 'C:/Graduation_Pj/yolo/final_pklot/yolov5-master/data/images/snapshot_661.jpg'
-        cv2.imwrite(path, frame)  # ¿µ»ó -> ÀÌ¹ÌÁö·Î ÀúÀå
+        cv2.imwrite(path, frame)  # ì˜ìƒ -> ì´ë¯¸ì§€ë¡œ ì €ìž¥
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
     num += 1
@@ -36,15 +36,15 @@ cap.release()
 cv2.destroyAllWindows()
 ```
 
-- ÀÌ¹ÌÁöÈ­´Â cv¸¦ ÀÌ¿ëÇÏ¿´´Ù. ¹Ì¸® Âï¾îµÐ µ¿¿µ»ó(640*640)À» ÀÌ¿ëÇØ °°Àº ÇÁ·¹ÀÓÀÇ ÀÌ¹ÌÁö·Î ÀúÀåÇÏ¿´´Ù.
+- ì´ë¯¸ì§€í™”ëŠ” cvë¥¼ ì´ìš©í•˜ì˜€ë‹¤. ë¯¸ë¦¬ ì°ì–´ë‘” ë™ì˜ìƒ(640*640)ì„ ì´ìš©í•´ ê°™ì€ í”„ë ˆìž„ì˜ ì´ë¯¸ì§€ë¡œ ì €ìž¥í•˜ì˜€ë‹¤.
 
 <p align="center">
  <img src = "https://user-images.githubusercontent.com/77920565/205485185-f322d04a-2984-4c35-a5f0-5d3ebfdbac93.png" width = 380>
 </p>
 
-- °á°ú´Â À§ ±×¸²°ú °°ÀÌ ±âº» ÀúÀå ÀÌ¸§ snapshot_num¸¦ ÁöÁ¤ÇÏ¿© jpg ÆÄÀÏ·Î ÀúÀå µÇ¾ú´Ù ¿©±â¼­ numÀº °Ë»öÇØº» °á°ú 1ÇÁ·¹ÀÓ¿¡ ÇØ´çÇÏ´Â °á°ú °ªÀ¸·Î ´ë·« 44ÃÊÀÇ ¿µ»óÀÌ 660 ÇÁ·¹ÀÓÀÌ±â ¶§¹®¿¡ 1ÃÊ¿¡ 15ÇÁ·¹ÀÓÀ» ÃßÃøÇÒ ¼ö ÀÖ´Ù.
+- ê²°ê³¼ëŠ” ìœ„ ê·¸ë¦¼ê³¼ ê°™ì´ ê¸°ë³¸ ì €ìž¥ ì´ë¦„ snapshot_numë¥¼ ì§€ì •í•˜ì—¬ jpg íŒŒì¼ë¡œ ì €ìž¥ ë˜ì—ˆë‹¤ ì—¬ê¸°ì„œ numì€ ê²€ìƒ‰í•´ë³¸ ê²°ê³¼ 1í”„ë ˆìž„ì— í•´ë‹¹í•˜ëŠ” ê²°ê³¼ ê°’ìœ¼ë¡œ ëŒ€ëžµ 44ì´ˆì˜ ì˜ìƒì´ 660 í”„ë ˆìž„ì´ê¸° ë•Œë¬¸ì— 1ì´ˆì— 15í”„ë ˆìž„ì„ ì¶”ì¸¡í•  ìˆ˜ ìžˆë‹¤.
 
-### ÀÌ¹ÌÁö¿¡ ´ëÇÑ ÁÖÂ÷±¸¿ª ÁÂÇ¥¸é¿¡ ´ëÇÑ ÁÂÇ¥ °Ë»ö
+### ì´ë¯¸ì§€ì— ëŒ€í•œ ì£¼ì°¨êµ¬ì—­ ì¢Œí‘œë©´ì— ëŒ€í•œ ì¢Œí‘œ ê²€ìƒ‰
 
 ```Python
 import cv2
@@ -57,29 +57,29 @@ print("width, height : ",width, height)
 
 cv2.destroyAllWindows()
 ```
-- À§¿¡¼­ ÀÚ¸¥ ÇÑ°³ÀÇ ÀÌ¹ÌÁö´Â µ¿¿µ»ó ÇÁ·¹ÀÓ°ú °°Àº ÇÁ·¹ÀÓÀÌ±â ¶§¹®¿¡ µ¿¿µ»ó¿¡¼­ ÇØ´çÇÏ´Â ÁÂÇ¥¸é°ú °°´Ù°í º¼ ¼ö ÀÖ´Ù µû¶ó¼­ ¾Æ·¡ ÀÌ¹ÌÁö¸¦ ±âÁØÀ¸·Î ÇÑ°³ÀÇ ÁÖÂ÷Àå¿¡ ´ëÇÑ ¸ðµç ÁÂÇ¥¸éÀ» ±¸ÇÏ¿´´Ù. 
+- ìœ„ì—ì„œ ìžë¥¸ í•œê°œì˜ ì´ë¯¸ì§€ëŠ” ë™ì˜ìƒ í”„ë ˆìž„ê³¼ ê°™ì€ í”„ë ˆìž„ì´ê¸° ë•Œë¬¸ì— ë™ì˜ìƒì—ì„œ í•´ë‹¹í•˜ëŠ” ì¢Œí‘œë©´ê³¼ ê°™ë‹¤ê³  ë³¼ ìˆ˜ ìžˆë‹¤ ë”°ë¼ì„œ ì•„ëž˜ ì´ë¯¸ì§€ë¥¼ ê¸°ì¤€ìœ¼ë¡œ í•œê°œì˜ ì£¼ì°¨ìž¥ì— ëŒ€í•œ ëª¨ë“  ì¢Œí‘œë©´ì„ êµ¬í•˜ì˜€ë‹¤. 
 
 <p align="center">
  <img src = "https://user-images.githubusercontent.com/77920565/205485325-33a94efd-e94f-4e0d-8cf3-6e8581d9366c.jpg" width = 380>
 </p>
 
-### ÀÌ¹ÌÁö¸¶´Ù °´Ã¼ ÀÎ½Ä ½Ã »ý¼ºµÇ´Â exp ÆÄÀÏÀÇ label °ª »ç¿ë
+### ì´ë¯¸ì§€ë§ˆë‹¤ ê°ì²´ ì¸ì‹ ì‹œ ìƒì„±ë˜ëŠ” exp íŒŒì¼ì˜ label ê°’ ì‚¬ìš©
 
 <p align="center">
  <img src = "https://user-images.githubusercontent.com/77920565/205485389-0a29229f-6e27-4375-8576-0adb82c638a4.png" width = 380>
 </p>
 
-- Yolov5ÀÇ detect ÆÄÀÏÀ» ½ÇÇàÇÒ ¶§ --save-txt ¿É¼ÇÀ» Ãß°¡ÇØÁÙ °æ¿ì À§ ±×¸²°ú °°ÀÌ runs/dtext/exp/labels¶ó´Â Æú´õ°¡ »ý±â°¡ ÀÌ¹ÌÁöÀÇ ÀÌ¸§°ú ÇÔ²² txt ÆÄÀÏÀÌ »ý¼ºµÈ´Ù.
+- Yolov5ì˜ detect íŒŒì¼ì„ ì‹¤í–‰í•  ë•Œ --save-txt ì˜µì…˜ì„ ì¶”ê°€í•´ì¤„ ê²½ìš° ìœ„ ê·¸ë¦¼ê³¼ ê°™ì´ runs/dtext/exp/labelsë¼ëŠ” í´ë”ê°€ ìƒê¸°ê°€ ì´ë¯¸ì§€ì˜ ì´ë¦„ê³¼ í•¨ê»˜ txt íŒŒì¼ì´ ìƒì„±ëœë‹¤.
 
 <p align="center">
  <img src = "https://user-images.githubusercontent.com/77920565/205485447-9e0602c3-28e6-4012-8f36-2b2ed7c2bbe6.png" width = 380>
 </p>
 
-- txt ÆÄÀÏÀÇ ³»¿ëÀº ´ÙÀ½°ú °°°í ÇÑÁÙÀÇ ¼ø¼­´ë·Î class ÀÌ¸§, °´Ã¼ÀÇ ÁßÁ¡ xÁÂÇ¥, yÁÂÇ¥, ³ÐÀÌ, ±æÀÌ ¼øÀ¸·Î ÀúÀåµÈ´Ù. ¿ì¸®´Â ÀÌ »ý¼ºµÇ´Â labelÀÇ ³»¿ëÀ» ÀÌ¿ëÇÏ¿´´Ù.
+- txt íŒŒì¼ì˜ ë‚´ìš©ì€ ë‹¤ìŒê³¼ ê°™ê³  í•œì¤„ì˜ ìˆœì„œëŒ€ë¡œ class ì´ë¦„, ê°ì²´ì˜ ì¤‘ì  xì¢Œí‘œ, yì¢Œí‘œ, ë„“ì´, ê¸¸ì´ ìˆœìœ¼ë¡œ ì €ìž¥ëœë‹¤. ìš°ë¦¬ëŠ” ì´ ìƒì„±ë˜ëŠ” labelì˜ ë‚´ìš©ì„ ì´ìš©í•˜ì˜€ë‹¤.
 
-### ÃÖÁ¾ ÄÚµå
+### ìµœì¢… ì½”ë“œ
 
-Yolov5ÀÇ detect ÆÄÀÏ°ú ÀÌ¸¦ ÀÌ¿ëÇØ °á°ú °ªÀÌ labelÀ» ÀÌ¿ëÇÏ¿© °´Ã¼¸¦ ÀÎ½ÄÇÏ°í API¿¡¼­ °¡½ÃÈ­ ÇÏ±â À§ÇØ Firebase¿¡¼­ Á¦°øÇÏ´Â Realtime database¸¦ ÀÌ¿ëÇÏ¿© ÀúÀåÇÏ°í ÀÌ¸¦ ½Ç½Ã°£À¸·Î ÁÖ°í¹Þ¾Ò´Ù.
+Yolov5ì˜ detect íŒŒì¼ê³¼ ì´ë¥¼ ì´ìš©í•´ ê²°ê³¼ ê°’ì´ labelì„ ì´ìš©í•˜ì—¬ ê°ì²´ë¥¼ ì¸ì‹í•˜ê³  APIì—ì„œ ê°€ì‹œí™” í•˜ê¸° ìœ„í•´ Firebaseì—ì„œ ì œê³µí•˜ëŠ” Realtime databaseë¥¼ ì´ìš©í•˜ì—¬ ì €ìž¥í•˜ê³  ì´ë¥¼ ì‹¤ì‹œê°„ìœ¼ë¡œ ì£¼ê³ ë°›ì•˜ë‹¤.
 
 ```Python
 import os
@@ -98,7 +98,7 @@ count_empty = 0
 cred = credentials.Certificate(
         "C:/Graduation_Pj/yolo/final_pklot/yolov5-master/yolov5-f7e84-firebase-adminsdk-7dbnc-6e25b09e81.json")
 firebase_admin.initialize_app(cred, {
-        'databaseURL': 'Firebase ÀúÀå °æ·Î'
+        'databaseURL': 'Firebase ì €ìž¥ ê²½ë¡œ'
 })
 ref = db.reference()
 
@@ -201,12 +201,12 @@ while tmp_count_filename < 663:
     print("Occupied : ", count_occupied)
     print("Empty : ", count_empty, "\n")
 
-    #ÃÊ±âÈ­
+    #ì´ˆê¸°í™”
     count_occupied = 0
     count_empty = 0
 
     tmp_count_filename += 65
-    # 1ÃÊ: 15
+    # 1ì´ˆ: 15
     tmp_count_exp += 1
     dictionary = {(i+1): str(SPOT_list[i]) for i in range(0, len(SPOT_list))}
     print(dictionary)
@@ -217,15 +217,15 @@ while tmp_count_filename < 663:
 sys.stdout.close()
 ```
 
-- ±âº»ÀûÀÎ ÇÁ·Î±×·¥ »ý¸í ÁÖ±â´Â ¸ÕÀú ÀÌ¹ÌÁö¿¡ ´ëÇÑ ±âº» ÀÌ¸§, filename, labelÀÉ txt ÆÄÀÏÀ» ÀÐ±â À§ÇÑ º¯¼ö, ÁÖÂ÷ °ø°£¿¡ ´ëÇÑ occupied, empty ÀúÀå º¯¼ö, firebase¿¡ ÀúÀåÇÏ±â À§ÇÑ url°ú json ÆÄÀÏÀ» Á¤ÀÇÇØ ÁÖ¾ú´Ù.
-- ÃÑ ³ª´©¾îÁø ÀÌ¹ÌÁöÀÇ ¼ö°¡ 660Àå ÀÌ±â ¶§¹®¿¡ while ¹Ýº¹¹®À» ÀÌ¿ëÇÏ¿© ½Ã½ºÅÛÀÌ µ¹¾Æ °¥ ¼ö ÀÖµµ·Ï ÇÏ¿´´Ù.
-- os.system()ÇÔ¼ö¸¦ ÀÌ¿ëÇØ Yolov5ÀÇ detect.py ÆÄÀÏÀ» ½ÇÇà ½ÃÄ×°í ÇÑ¹ø ½ÇÇàÇÒ ¶§¸¶´Ù À§¿¡¼­ ¼³¸íÇÑ exp ÆÄÀÏÀÌ »ý¼ºµÇ°í ±× ¹Ø¿¡ ÀÖ´Â label ÆÄÀÏÀÇ txt ÆÄÀÏ·Î Á¢±ÙÇÏ¿´´Ù
-- final_list´Â ¿ì¸®°¡ Á¢±ÙÇÑ labelÀÇ txt ÆÄÀÏ¿¡¼­ ÀÎ½ÄÇÑ °´Ã¼¿¡ ´ëÇÑ x, y Áß½É ÁÂÇ¥¸¦ ÀúÀåÇÑ °ø°£À¸·Î ÇÑ °´Ã¼¿¡ ´ëÇØ 2°³ÀÇ ÁÂÇ¥°¡ ÀÖ±â ¶§¹®¿¡ 2¸¦ ÁÖ±â·Î for ¹Ýº¹¹®À» ½ÇÇà ½ÃÄ×´Ù.
-- final_list¿¡ ÀúÀåµÇ¾î ÀÖ´Â ÀÎ½ÄÇÑ °´Ã¼¿¡ ´ëÇÑ ÁÂÇ¥°ª ¸¸Å­ ÇØ´ç ÁÖÂ÷¸é ÁÂÇ¥¿¡ °´Ã¼°¡ ÀÎ½ÄµÉ °æ¿ì 0À¸·Î ÃÊ±âÈ­ µÇ¾îÀÖ´Â SPOT_list[]ÀÇ °ªÀ» 1·Î º¯°æÇÏ¿© ÀÚµ¿Â÷°¡ ÀÌ¹Ì ÁÖÂ÷µÇ¾î ÀÖÀ½À» ÆÇ´ÜÇÏ¿´°í occupied º¯¼ö¿¡ 1À» Áõ°¡½ÃÄÑ ÁÖ¾ú´Ù.
-- ¿ø·¡´Â ÀÌ °á°ú °ª(SPOT_list[])¸¦ Json ÆÄÀÏ·Î ÀúÀåÇÏ±â À§ÇØ dictionary¸¦ »ý¼ºÇÏ¿© ÀÌ¸¦ ÀúÀåÇÏ¿´Áö¸¸ firebase¿¡ ½Ç½Ã°£À¸·Î ÀúÀåÇÏ±â À§ÇØ ¹Ù·Î Á¢±ÙÇÏ¿© ÀúÀåÇÏ¿´´Ù. 
+- ê¸°ë³¸ì ì¸ í”„ë¡œê·¸ëž¨ ìƒëª… ì£¼ê¸°ëŠ” ë¨¼ì € ì´ë¯¸ì§€ì— ëŒ€í•œ ê¸°ë³¸ ì´ë¦„, filename, labelì  txt íŒŒì¼ì„ ì½ê¸° ìœ„í•œ ë³€ìˆ˜, ì£¼ì°¨ ê³µê°„ì— ëŒ€í•œ occupied, empty ì €ìž¥ ë³€ìˆ˜, firebaseì— ì €ìž¥í•˜ê¸° ìœ„í•œ urlê³¼ json íŒŒì¼ì„ ì •ì˜í•´ ì£¼ì—ˆë‹¤.
+- ì´ ë‚˜ëˆ„ì–´ì§„ ì´ë¯¸ì§€ì˜ ìˆ˜ê°€ 660ìž¥ ì´ê¸° ë•Œë¬¸ì— while ë°˜ë³µë¬¸ì„ ì´ìš©í•˜ì—¬ ì‹œìŠ¤í…œì´ ëŒì•„ ê°ˆ ìˆ˜ ìžˆë„ë¡ í•˜ì˜€ë‹¤.
+- os.system()í•¨ìˆ˜ë¥¼ ì´ìš©í•´ Yolov5ì˜ detect.py íŒŒì¼ì„ ì‹¤í–‰ ì‹œì¼°ê³  í•œë²ˆ ì‹¤í–‰í•  ë•Œë§ˆë‹¤ ìœ„ì—ì„œ ì„¤ëª…í•œ exp íŒŒì¼ì´ ìƒì„±ë˜ê³  ê·¸ ë°‘ì— ìžˆëŠ” label íŒŒì¼ì˜ txt íŒŒì¼ë¡œ ì ‘ê·¼í•˜ì˜€ë‹¤
+- final_listëŠ” ìš°ë¦¬ê°€ ì ‘ê·¼í•œ labelì˜ txt íŒŒì¼ì—ì„œ ì¸ì‹í•œ ê°ì²´ì— ëŒ€í•œ x, y ì¤‘ì‹¬ ì¢Œí‘œë¥¼ ì €ìž¥í•œ ê³µê°„ìœ¼ë¡œ í•œ ê°ì²´ì— ëŒ€í•´ 2ê°œì˜ ì¢Œí‘œê°€ ìžˆê¸° ë•Œë¬¸ì— 2ë¥¼ ì£¼ê¸°ë¡œ for ë°˜ë³µë¬¸ì„ ì‹¤í–‰ ì‹œì¼°ë‹¤.
+- final_listì— ì €ìž¥ë˜ì–´ ìžˆëŠ” ì¸ì‹í•œ ê°ì²´ì— ëŒ€í•œ ì¢Œí‘œê°’ ë§Œí¼ í•´ë‹¹ ì£¼ì°¨ë©´ ì¢Œí‘œì— ê°ì²´ê°€ ì¸ì‹ë  ê²½ìš° 0ìœ¼ë¡œ ì´ˆê¸°í™” ë˜ì–´ìžˆëŠ” SPOT_list[]ì˜ ê°’ì„ 1ë¡œ ë³€ê²½í•˜ì—¬ ìžë™ì°¨ê°€ ì´ë¯¸ ì£¼ì°¨ë˜ì–´ ìžˆìŒì„ íŒë‹¨í•˜ì˜€ê³  occupied ë³€ìˆ˜ì— 1ì„ ì¦ê°€ì‹œì¼œ ì£¼ì—ˆë‹¤.
+- ì›ëž˜ëŠ” ì´ ê²°ê³¼ ê°’(SPOT_list[])ë¥¼ Json íŒŒì¼ë¡œ ì €ìž¥í•˜ê¸° ìœ„í•´ dictionaryë¥¼ ìƒì„±í•˜ì—¬ ì´ë¥¼ ì €ìž¥í•˜ì˜€ì§€ë§Œ firebaseì— ì‹¤ì‹œê°„ìœ¼ë¡œ ì €ìž¥í•˜ê¸° ìœ„í•´ ë°”ë¡œ ì ‘ê·¼í•˜ì—¬ ì €ìž¥í•˜ì˜€ë‹¤. 
 
 <p align="center">
  <img src = "https://user-images.githubusercontent.com/77920565/205486030-eb818887-46d7-40b0-8754-f2dd0f477a2f.png" width = 700>
 </p>
 
-- ±×¸²°ú °°ÀÌ ÁöÁ¤ÇÑ ÁÖÂ÷ ±¸¿ª º°·Î ½Ç½Ã°£À¸·Î firbaseÀÇ °ªÀÌ º¯ÇÏ´Â °ÍÀ» º¼ ¼ö ÀÖ¾ú´Ù. ÀÌÁ¦ Å×½ºÆ® ¿µ»óÀÌ ¾Æ´Ñ ½ÇÁ¦ ±¸Çö ¿µ»óÀ» ¹ÙÅÁÀ¸·Î ¸¹Àº Â÷µéÀÇ º¯È­¸¦ ÀÎ½ÄÇÏ¿© ÀúÀåÇØ¼­ ±×°ÍÀ» APPÀ¸·Î °¡½ÃÈ­ÇØº¼ »ý°¢ÀÌ´Ù.
+- ê·¸ë¦¼ê³¼ ê°™ì´ ì§€ì •í•œ ì£¼ì°¨ êµ¬ì—­ ë³„ë¡œ ì‹¤ì‹œê°„ìœ¼ë¡œ firbaseì˜ ê°’ì´ ë³€í•˜ëŠ” ê²ƒì„ ë³¼ ìˆ˜ ìžˆì—ˆë‹¤. ì´ì œ í…ŒìŠ¤íŠ¸ ì˜ìƒì´ ì•„ë‹Œ ì‹¤ì œ êµ¬í˜„ ì˜ìƒì„ ë°”íƒ•ìœ¼ë¡œ ë§Žì€ ì°¨ë“¤ì˜ ë³€í™”ë¥¼ ì¸ì‹í•˜ì—¬ ì €ìž¥í•´ì„œ ê·¸ê²ƒì„ APPìœ¼ë¡œ ê°€ì‹œí™”í•´ë³¼ ìƒê°ì´ë‹¤.
