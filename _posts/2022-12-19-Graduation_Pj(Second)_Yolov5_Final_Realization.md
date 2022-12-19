@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Parking space management impression
+title: Parking space management realization
 subtitle: Parking space management through image recognition
 categories: Graduation_Pj(Second)
 tags: YOLOv5
